@@ -145,10 +145,11 @@ while true; do
   # upload wal log
   upload_wal_log
 
+  # purge the expired wal logs
+  purge_expired_files
+
   # save backup status which will be updated to `backup` CR by the sidecar
   save_backup_status
 
-  # purge the expired wal logs
-  purge_expired_files
   sleep ${LOG_ARCHIVE_SECONDS}
 done
